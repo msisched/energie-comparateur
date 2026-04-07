@@ -4,19 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Comparateur énergie : électricité et gaz, offres et bonus de bienvenue</title>
-  <meta name="description" content="Comparez plusieurs fournisseurs d’électricité et de gaz, visualisez les avantages disponibles et accédez aux offres ou bonus de bienvenue pour réduire votre facture d’énergie.">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#0f766e">
+  <title>Comparateur énergie : électricité et gaz</title>
+  <meta name="description" content="Comparez les fournisseurs d’électricité et de gaz et profitez des meilleurs avantages pour réduire votre facture.">
 
-  <link rel="canonical" href="https://energie-comparateur.eu/">
   <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta property="og:title" content="Énergie Comparateur - électricité, gaz et bonus de bienvenue">
-  <meta property="og:description" content="Un comparateur simple pour repérer des fournisseurs d’énergie, consulter les avantages disponibles et accéder rapidement aux offres.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://energie-comparateur.eu/">
-  <meta property="og:image" content="https://energie-comparateur.eu/preview.png">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SE0MT1DLE"></script>
@@ -28,199 +19,88 @@
   </script>
 
   <style>
-    * { box-sizing: border-box; }
-
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial;
       background: #f4f7fb;
-      color: #172033;
-      line-height: 1.6;
+      color: #1f2937;
     }
 
     header {
       background: linear-gradient(135deg, #0f172a, #0f766e);
       color: white;
-      padding: 56px 20px 42px;
       text-align: center;
-    }
-
-    .header-wrap {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.1rem;
-      line-height: 1.25;
-    }
-
-    header p {
-      max-width: 850px;
-      margin: 16px auto 0;
-      font-size: 1.05rem;
-      opacity: 0.96;
+      padding: 50px 20px;
     }
 
     main {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 28px 20px 40px;
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px;
     }
 
     .card {
       background: white;
-      border-radius: 18px;
       padding: 24px;
-      margin-bottom: 24px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 0.9fr;
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .pill {
-      background: #ecfeff;
-      color: #0f766e;
-      border: 1px solid #a5f3fc;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.92rem;
-      font-weight: bold;
-    }
-
-    .cta-box {
-      background: linear-gradient(180deg, #f8fafc, #eefdfd);
-      border: 1px solid #d1fae5;
       border-radius: 16px;
-      padding: 20px;
-    }
-
-    .cta-box h2 {
-      margin-top: 0;
-      font-size: 1.2rem;
-    }
-
-    .cta-box p {
-      margin-bottom: 14px;
-    }
-
-    .cta-link {
-      display: inline-block;
-      text-decoration: none;
-      background: #0f766e;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-
-    .cta-link:hover {
-      background: #0d5f5a;
-      transform: translateY(-1px);
-    }
-
-    .search-box {
-      margin-top: 10px;
-    }
-
-    .search-box input {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #cbd5e1;
-      border-radius: 12px;
-      font-size: 1rem;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 14px;
+    }
+
+    th, td {
+      padding: 14px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
     }
 
     thead {
       background: #e6fffb;
     }
 
-    th, td {
-      text-align: left;
-      padding: 14px;
-      border-bottom: 1px solid #edf2f7;
-      vertical-align: middle;
-    }
-
-    th {
-      color: #0f172a;
-      font-size: 0.96rem;
-    }
-
     .provider-logo {
-      height: 56px;
-      object-fit: contain;
+      height: 60px;
     }
 
-    .logo-total { height: 92px; }
-    .logo-primeo { height: 36px; }
-    .logo-ekwateur { height: 28px; }
+    .logo-total { height: 100px; }
+    .logo-primeo { height: 40px; }
+    .logo-ekwateur { height: 30px; }
 
     .tag {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 0.88rem;
-      font-weight: bold;
-    }
-
-    .tag-electricity {
-      background: #eef2ff;
-      color: #4338ca;
-    }
-
-    .tag-mix {
       background: #eff6ff;
       color: #1d4ed8;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
     }
 
     .bonus {
-      display: inline-block;
       background: #dcfce7;
       color: #166534;
-      padding: 7px 11px;
-      border-radius: 9px;
+      padding: 6px 10px;
+      border-radius: 8px;
       font-weight: bold;
     }
 
     .code {
-      display: inline-block;
-      background: #f8fafc;
-      border: 1px dashed #94a3b8;
-      border-radius: 8px;
-      padding: 7px 10px;
+      background: #f3f4f6;
+      border: 1px dashed #999;
+      padding: 6px 10px;
+      border-radius: 6px;
       margin-right: 8px;
-      font-family: Arial, sans-serif;
     }
 
     button {
       background: #0f766e;
       color: white;
       border: none;
-      padding: 8px 11px;
-      border-radius: 8px;
+      padding: 6px 10px;
+      border-radius: 6px;
       cursor: pointer;
-      font-weight: bold;
     }
 
     button:hover {
@@ -228,99 +108,25 @@
     }
 
     .link-btn {
-      display: inline-block;
-      text-decoration: none;
       background: #0f766e;
       color: white;
       padding: 10px 14px;
-      border-radius: 9px;
-      font-weight: bold;
-    }
-
-    .link-btn:hover {
-      background: #0d5f5a;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
     }
 
     .muted {
-      color: #64748b;
+      color: #888;
       font-style: italic;
     }
 
-    .mini-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .mini-box {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 18px;
-    }
-
-    .mini-box h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 1.04rem;
-    }
-
-    .accent-green {
-      color: #16a34a;
-      font-weight: bold;
-    }
-
-    .accent-red {
+    .highlight {
       color: #dc2626;
       font-weight: bold;
       background: #fee2e2;
       padding: 2px 6px;
       border-radius: 6px;
-    }
-
-    .seo-lite details summary {
-      cursor: pointer;
-      font-weight: bold;
-      color: #0f766e;
-    }
-
-    .seo-lite details div {
-      margin-top: 16px;
-      color: #475569;
-      font-size: 0.95rem;
-    }
-
-    footer {
-      text-align: center;
-      color: #64748b;
-      font-size: 0.94rem;
-      padding: 8px 20px 30px;
-    }
-
-    @media (max-width: 900px) {
-      .intro-grid,
-      .mini-grid {
-        grid-template-columns: 1fr;
-      }
-
-      header h1 {
-        font-size: 1.7rem;
-      }
-    }
-
-    @media (max-width: 700px) {
-      th, td {
-        padding: 10px;
-        font-size: 0.94rem;
-      }
-
-      .provider-logo {
-        height: 46px;
-      }
-
-      .logo-total {
-        height: 72px;
-      }
     }
   </style>
 </head>
@@ -328,255 +134,113 @@
 <body>
 
 <header>
-  <div class="header-wrap">
-    <h1>Énergie Comparateur : comparez les fournisseurs et repérez les meilleurs avantages disponibles</h1>
-    <p>
-      Consultez plusieurs offres d’électricité et de gaz, visualisez les bonus de bienvenue,
-      comparez rapidement les fournisseurs et choisissez la solution la plus adaptée à votre budget.
-    </p>
-  </div>
+  <h1>
+    Comparez les fournisseurs d’énergie et
+    <span class="highlight">réduisez votre facture</span>
+  </h1>
 </header>
 
 <main>
 
-  <section class="card intro-grid">
-    <div>
-      <h2>Comparer les fournisseurs d’énergie en un coup d’œil</h2>
-      <p>
-        Le marché de l’électricité et du gaz propose plusieurs fournisseurs avec des avantages différents.
-        Changer de fournisseur est généralement <span class="accent-green">gratuit</span>,
-        sans intervention technique, et peut permettre de réaliser
-        <span class="accent-red">plusieurs dizaines d’euros d’économies par mois</span>
-        selon l’offre choisie et votre consommation.
-      </p>
-
-      <div class="pill-row">
-        <span class="pill">Comparatif électricité</span>
-        <span class="pill">Comparatif gaz</span>
-        <span class="pill">Bonus de bienvenue</span>
-        <span class="pill">Souscription rapide</span>
-      </div>
-    </div>
-
-    <div class="cta-box">
-      <h2>Comparer aussi avec le service public</h2>
-      <p>
-        Pour compléter votre recherche, vous pouvez consulter le comparateur officiel des offres d’énergie.
-      </p>
-      <a
-        class="cta-link"
-        href="https://www.service-public.gouv.fr/particuliers/vosdroits/R43794"
-        target="_blank"
-        rel="noopener noreferrer"
-        onclick="trackLink('service_public')"
-      >
-        Ouvrir le comparateur officiel
-      </a>
-    </div>
-  </section>
-
-  <section class="card">
-    <h2>Tableau comparatif des fournisseurs</h2>
+  <div class="card">
     <p>
-      Ce tableau met l’accent sur la comparaison des fournisseurs, les types d’énergie proposés
-      et les avantages disponibles au moment de la consultation.
+      Le changement de fournisseur est gratuit et peut vous faire économiser plusieurs dizaines d’euros par mois.
     </p>
+  </div>
 
-    <div class="search-box">
-      <input id="searchInput" placeholder="Rechercher un fournisseur, une offre ou un avantage...">
-    </div>
+  <div class="card">
 
-    <table id="providersTable">
+    <table>
       <thead>
         <tr>
           <th>Fournisseur</th>
           <th>Énergie</th>
-          <th>Accès à l’offre</th>
+          <th>Code promotion</th>
           <th>Avantage</th>
-          <th>Action</th>
+          <th>Accès</th>
         </tr>
       </thead>
 
       <tbody>
+
         <tr>
-          <td>
-            <span style="display:none;">comparateur energie total totalenergies offre electricite gaz bonus bienvenue</span>
-            <img src="Logo_TotalEnergies.svg" class="provider-logo logo-total" alt="TotalEnergies">
-          </td>
-          <td><span class="tag tag-mix">Électricité / Gaz</span></td>
+          <td><img src="Logo_TotalEnergies.svg" class="provider-logo logo-total"></td>
+          <td><span class="tag">Électricité / Gaz</span></td>
           <td>
             <span class="code" id="c1">114201916</span>
-            <button onclick="copyCode('c1','total')">Copier</button>
+            <button onclick="copyCode('c1')">Copier</button>
           </td>
-          <td><span class="bonus">20 € d’avantage</span></td>
-          <td><span class="muted">Code à utiliser</span></td>
+          <td><span class="bonus">20 €</span></td>
+          <td class="muted">Code à utiliser</td>
         </tr>
 
         <tr>
+          <td><img src="octopus.png" class="provider-logo"></td>
+          <td><span class="tag">Électricité / Gaz</span></td>
+          <td class="muted">Lien direct</td>
+          <td><span class="bonus">40 €</span></td>
           <td>
-            <span style="display:none;">comparateur energie octopus energy offre bonus electricite gaz</span>
-            <img src="octopus.png" class="provider-logo" alt="Octopus Energy">
-          </td>
-          <td><span class="tag tag-mix">Électricité / Gaz</span></td>
-          <td><span class="muted">Accès direct via lien</span></td>
-          <td><span class="bonus">40 € d’avantage</span></td>
-          <td>
-            <a
-              class="link-btn"
-              href="https://share.octopusenergy.fr/codeparrainage/smoke-window-954"
-              target="_blank"
-              rel="noopener noreferrer"
-              onclick="trackLink('octopus')"
-            >
-              Voir l’offre
+            <a class="link-btn" href="https://share.octopusenergy.fr/codeparrainage/smoke-window-954" target="_blank">
+              Voir
             </a>
           </td>
         </tr>
 
         <tr>
+          <td><img src="Mint_energie.png" class="provider-logo"></td>
+          <td><span class="tag">Électricité / Gaz</span></td>
           <td>
-            <span style="display:none;">comparateur energie mint mint energie offre electricite gaz bonus</span>
-            <img src="Mint_energie.png" class="provider-logo" alt="Mint Énergie">
+            <span class="code" id="c2">7796938</span>
+            <button onclick="copyCode('c2')">Copier</button>
           </td>
-          <td><span class="tag tag-mix">Électricité / Gaz</span></td>
+          <td><span class="bonus">10 €</span></td>
           <td>
-            <span class="code" id="c5">7796938</span>
-            <button onclick="copyCode('c5','mint')">Copier</button>
-          </td>
-          <td><span class="bonus">10 € d’avantage</span></td>
-          <td>
-            <a
-              class="link-btn"
-              href="https://client.mint-energie.com?cp=7796938"
-              target="_blank"
-              rel="noopener noreferrer"
-              onclick="trackLink('mint')"
-            >
-              Voir l’offre
+            <a class="link-btn" href="https://client.mint-energie.com?cp=7796938" target="_blank">
+              Voir
             </a>
           </td>
         </tr>
 
         <tr>
+          <td><img src="primeo_energie.png" class="provider-logo logo-primeo"></td>
+          <td><span class="tag">Électricité / Gaz</span></td>
           <td>
-            <span style="display:none;">comparateur energie primeo primeo energie offre electricite gaz bonus</span>
-            <img src="primeo_energie.png" class="provider-logo logo-primeo" alt="Primeo Énergie">
+            <span class="code" id="c3">CLT85638862</span>
+            <button onclick="copyCode('c3')">Copier</button>
           </td>
-          <td><span class="tag tag-mix">Électricité / Gaz</span></td>
-          <td>
-            <span class="code" id="c4">CLT85638862</span>
-            <button onclick="copyCode('c4','primeo')">Copier</button>
-          </td>
-          <td><span class="bonus">15 € d’avantage</span></td>
-          <td><span class="muted">Code à utiliser</span></td>
+          <td><span class="bonus">15 €</span></td>
+          <td class="muted">Code à utiliser</td>
         </tr>
 
         <tr>
+          <td><img src="Ekwateur.png" class="provider-logo logo-ekwateur"></td>
+          <td><span class="tag">Électricité / Gaz</span></td>
           <td>
-            <span style="display:none;">comparateur energie ekwateur offre electricite gaz bonus bienvenue</span>
-            <img src="Ekwateur.png" class="provider-logo logo-ekwateur" alt="Ekwateur">
+            <span class="code" id="c4">EKW002441537</span>
+            <button onclick="copyCode('c4')">Copier</button>
           </td>
-          <td><span class="tag tag-mix">Électricité / Gaz</span></td>
+          <td><span class="bonus">150 kWh</span></td>
           <td>
-            <span class="code" id="c3">EKW002441537</span>
-            <button onclick="copyCode('c3','ekwateur')">Copier</button>
-          </td>
-          <td><span class="bonus">150 kWh offerts</span></td>
-          <td>
-            <a
-              class="link-btn"
-              href="https://souscription.ekwateur.fr/?codePromo=EKW002441537"
-              target="_blank"
-              rel="noopener noreferrer"
-              onclick="trackLink('ekwateur')"
-            >
-              Voir l’offre
+            <a class="link-btn" href="https://souscription.ekwateur.fr/?codePromo=EKW002441537" target="_blank">
+              Voir
             </a>
           </td>
         </tr>
+
       </tbody>
+
     </table>
-  </section>
 
-  <section class="card mini-grid">
-    <div class="mini-box">
-      <h3>Pourquoi comparer ?</h3>
-      <p>
-        Les écarts de prix, de services et d’avantages peuvent être importants d’un fournisseur à l’autre.
-        Un comparatif clair permet de repérer plus vite les options intéressantes.
-      </p>
-    </div>
-
-    <div class="mini-box">
-      <h3>Changement simple</h3>
-      <p>
-        La souscription à une nouvelle offre est en général rapide, sans coupure
-        et sans intervention sur le compteur dans la plupart des cas.
-      </p>
-    </div>
-
-    <div class="mini-box">
-      <h3>Vision budget</h3>
-      <p>
-        Utiliser un comparateur aide à identifier des offres susceptibles de réduire la facture,
-        surtout en combinant prix compétitif et avantage de bienvenue.
-      </p>
-    </div>
-  </section>
-
-  <section class="card seo-lite">
-    <details>
-      <summary>Informations complémentaires sur le comparatif énergie</summary>
-      <div>
-        <p>
-          Cette page a été pensée comme un <strong>comparateur énergie</strong> centré sur les fournisseurs d’électricité et de gaz,
-          avec une présentation orientée budget, avantages et accès à l’offre. Elle est différente d’une page purement dédiée au parrainage :
-          ici, l’angle principal reste la comparaison des fournisseurs, des bonus de bienvenue et des moyens de réduire sa facture.
-        </p>
-        <p>
-          Vous pouvez y retrouver des fournisseurs comme TotalEnergies, Primeo Énergie, Mint Énergie, Octopus Energy et Ekwateur,
-          afin de comparer plus facilement les possibilités disponibles avant une souscription.
-        </p>
-      </div>
-    </details>
-  </section>
+  </div>
 
 </main>
 
-<footer>
-  Énergie Comparateur - comparatif de fournisseurs d’électricité et de gaz, avantages et accès rapide aux offres.
-</footer>
-
 <script>
-function copyCode(id, provider){
+function copyCode(id){
   const code = document.getElementById(id).innerText;
-
-  navigator.clipboard.writeText(code)
-    .then(function() {
-      gtag('event', 'copy_code', {
-        provider: provider,
-        page_type: 'comparateur'
-      });
-      alert("Information copiée.");
-    })
-    .catch(function() {
-      alert("Impossible de copier automatiquement.");
-    });
+  navigator.clipboard.writeText(code);
+  alert("Copié !");
 }
-
-function trackLink(provider){
-  gtag('event', 'click_link', {
-    provider: provider,
-    page_type: 'comparateur'
-  });
-}
-
-document.getElementById("searchInput").addEventListener("keyup", function(){
-  let val = this.value.toLowerCase();
-  document.querySelectorAll("tbody tr").forEach(function(tr){
-    tr.style.display = tr.innerText.toLowerCase().includes(val) ? "" : "none";
-  });
-});
 </script>
 
 </body>
