@@ -77,11 +77,35 @@
       box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
     }
 
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 0.9fr;
-      gap: 20px;
-      align-items: stretch;
+    .intro-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .intro-text {
+      flex: 1 1 60%;
+      min-width: 0;
+    }
+
+    .intro-image {
+      flex: 0 0 340px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .intro-image a {
+      display: inline-block;
+    }
+
+    .intro-image img {
+      display: block;
+      width: 100%;
+      max-width: 340px;
+      height: auto;
+      border-radius: 12px;
     }
 
     .pill-row {
@@ -99,38 +123,6 @@
       border-radius: 999px;
       font-size: 0.92rem;
       font-weight: bold;
-    }
-
-    .cta-box {
-      background: linear-gradient(180deg, #f8fafc, #eefdfd);
-      border: 1px solid #d1fae5;
-      border-radius: 16px;
-      padding: 20px;
-    }
-
-    .cta-box h2 {
-      margin-top: 0;
-      font-size: 1.2rem;
-    }
-
-    .cta-box p {
-      margin-bottom: 14px;
-    }
-
-    .cta-link {
-      display: inline-block;
-      text-decoration: none;
-      background: #0f766e;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-
-    .cta-link:hover {
-      background: #0d5f5a;
-      transform: translateY(-1px);
     }
 
     table {
@@ -170,11 +162,6 @@
       border-radius: 999px;
       font-size: 0.88rem;
       font-weight: bold;
-    }
-
-    .tag-electricity {
-      background: #eef2ff;
-      color: #4338ca;
     }
 
     .tag-mix {
@@ -229,11 +216,6 @@
       background: #0d5f5a;
     }
 
-    .muted {
-      color: #64748b;
-      font-style: italic;
-    }
-
     .mini-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -286,9 +268,20 @@
     }
 
     @media (max-width: 900px) {
-      .intro-grid,
+      .intro-flex,
       .mini-grid {
         grid-template-columns: 1fr;
+      }
+
+      .intro-flex {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .intro-image {
+        flex: none;
+        width: 100%;
+        justify-content: center;
       }
 
       header h1 {
@@ -317,54 +310,50 @@
 
 <header>
   <div class="header-wrap">
-    <h1>Énergie Comparateur : comparez les fournisseurs et repérez les meilleurs avantages disponibles</h1>
+    <h1>Le comparateur officiel d’offres d’électricité et de gaz naturel du médiateur national de l’énergie
+</h1>
     <p>
       Consultez plusieurs offres d’électricité et de gaz, visualisez les bonus de bienvenue,
-      comparez rapidement les fournisseurs et choisissez la solution la plus adaptée à votre budget.
+      comparez rapidement les fournisseurs et choisissez la solution la plus adaptée à votre consommation.
     </p>
   </div>
 </header>
 
 <main>
 
-  <section class="card intro-grid">
-    <div>
-      <h2>Comparer les fournisseurs d’énergie en un coup d’œil</h2>
-      <p>
-        Le marché de l’électricité et du gaz propose plusieurs fournisseurs avec des avantages différents.
-        Changer de fournisseur est généralement <span class="accent-green">gratuit</span>,
-        sans intervention technique, et peut permettre de réaliser
-        <span class="accent-red">plusieurs dizaines d’euros d’économies par mois</span>
-        selon l’offre choisie et votre consommation.
-      </p>
+  <section class="card">
+    <div class="intro-flex">
+      <div class="intro-text">
+        <h2>Comparer les fournisseurs d’énergie en un coup d’œil</h2>
+        <p>
+          <ul>
+            <li>Plusieurs fournisseurs d’électricité et de gaz avec des avantages différents</li>
+            <li>Changement de fournisseur <span class="accent-green">gratuit</span> et sans intervention technique</li>
+          </ul>
+        </p>
 
-      <div class="pill-row">
-        <span class="pill">Comparatif électricité</span>
-        <span class="pill">Comparatif gaz</span>
-        <span class="pill">Bonus de bienvenue</span>
-        <span class="pill">Souscription rapide</span>
+        <div class="pill-row">
+          <span class="pill">Comparatif électricité/gaz</span>
+          <span class="pill">Souscription rapide</span>
+          <span class="pill">Bonus de bienvenue</span>
+        </div>
       </div>
-    </div>
 
-    <div class="cta-box">
-      <h2>Comparer aussi avec le service public</h2>
-      <p>
-        Pour compléter votre recherche, vous pouvez consulter le comparateur officiel des offres d’énergie.
-      </p>
-      <a
-        class="cta-link"
-        href="https://www.service-public.gouv.fr/particuliers/vosdroits/R43794"
-        target="_blank"
-        rel="noopener noreferrer"
-        onclick="trackLink('service_public')"
-      >
-        Ouvrir le comparateur officiel
-      </a>
+      <div class="intro-image">
+        <a
+          href="https://comparateur-offres.energie-info.fr/compte/profil?profil=particulier"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="trackLink('service_public')"
+        >
+          <img src="compare.png" alt="Accéder à l’outil de recherche">
+        </a>
+      </div>
     </div>
   </section>
 
   <section class="card">
-  <h2>Codes promotionnels énergie</h2>
+    <h2>Codes promotionnels énergie</h2>
 
     <table id="providersTable">
       <thead>
@@ -389,8 +378,6 @@
           </td>
           <td><span class="bonus">20 € d’avantage</span></td>
         </tr>
-
-
 
         <tr>
           <td>
@@ -449,7 +436,6 @@
             </a>
           </td>
           <td><span class="bonus">40 € d’avantage</span></td>
-
         </tr>
       </tbody>
     </table>
