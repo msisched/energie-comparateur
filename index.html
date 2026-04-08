@@ -56,13 +56,6 @@
       line-height: 1.25;
     }
 
-    header p {
-      max-width: 850px;
-      margin: 16px auto 0;
-      font-size: 1.05rem;
-      opacity: 0.96;
-    }
-
     main {
       max-width: 1120px;
       margin: 0 auto;
@@ -89,6 +82,19 @@
       min-width: 0;
     }
 
+    .intro-text h2 {
+      margin-top: 0;
+    }
+
+    .intro-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .intro-list li {
+      margin-bottom: 8px;
+    }
+
     .intro-image {
       flex: 0 0 340px;
       display: flex;
@@ -97,7 +103,9 @@
     }
 
     .intro-image a {
-      display: inline-block;
+      display: block;
+      width: 100%;
+      max-width: 340px;
     }
 
     .intro-image img {
@@ -125,10 +133,17 @@
       font-weight: bold;
     }
 
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 14px;
+    }
+
     table {
       width: 100%;
+      min-width: 720px;
       border-collapse: collapse;
-      margin-top: 14px;
     }
 
     thead {
@@ -145,11 +160,13 @@
     th {
       color: #0f172a;
       font-size: 0.96rem;
+      white-space: nowrap;
     }
 
     .provider-logo {
       height: 56px;
       object-fit: contain;
+      display: block;
     }
 
     .logo-total { height: 92px; }
@@ -162,6 +179,7 @@
       border-radius: 999px;
       font-size: 0.88rem;
       font-weight: bold;
+      white-space: nowrap;
     }
 
     .tag-mix {
@@ -176,6 +194,7 @@
       padding: 7px 11px;
       border-radius: 9px;
       font-weight: bold;
+      white-space: nowrap;
     }
 
     .code {
@@ -186,6 +205,7 @@
       padding: 7px 10px;
       margin-right: 8px;
       font-family: Arial, sans-serif;
+      white-space: nowrap;
     }
 
     button {
@@ -196,6 +216,7 @@
       border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
+      white-space: nowrap;
     }
 
     button:hover {
@@ -210,6 +231,7 @@
       padding: 10px 14px;
       border-radius: 9px;
       font-weight: bold;
+      white-space: nowrap;
     }
 
     .link-btn:hover {
@@ -268,20 +290,28 @@
     }
 
     @media (max-width: 900px) {
-      .intro-flex,
-      .mini-grid {
-        grid-template-columns: 1fr;
-      }
-
       .intro-flex {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        gap: 20px;
+      }
+
+      .intro-text {
+        width: 100%;
       }
 
       .intro-image {
         flex: none;
         width: 100%;
-        justify-content: center;
+      }
+
+      .intro-image a {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .mini-grid {
+        grid-template-columns: 1fr;
       }
 
       header h1 {
@@ -290,17 +320,76 @@
     }
 
     @media (max-width: 700px) {
+      main {
+        padding: 20px 12px 30px;
+      }
+
+      .card {
+        padding: 16px;
+        border-radius: 14px;
+      }
+
+      header {
+        padding: 42px 16px 32px;
+      }
+
+      header h1 {
+        font-size: 1.35rem;
+        line-height: 1.3;
+      }
+
+      .intro-text h2,
+      .card h2 {
+        font-size: 1.15rem;
+        line-height: 1.3;
+      }
+
+      .pill-row {
+        gap: 8px;
+      }
+
+      .pill {
+        font-size: 0.84rem;
+        padding: 7px 10px;
+      }
+
       th, td {
         padding: 10px;
-        font-size: 0.94rem;
+        font-size: 0.92rem;
       }
 
       .provider-logo {
-        height: 46px;
+        height: 42px;
       }
 
       .logo-total {
-        height: 72px;
+        height: 64px;
+      }
+
+      .logo-primeo {
+        height: 30px;
+      }
+
+      .logo-ekwateur {
+        height: 24px;
+      }
+
+      .code {
+        display: inline-block;
+        margin-right: 6px;
+        margin-bottom: 6px;
+        font-size: 0.88rem;
+      }
+
+      button,
+      .link-btn {
+        font-size: 0.88rem;
+        padding: 8px 10px;
+      }
+
+      .bonus,
+      .tag {
+        font-size: 0.82rem;
       }
     }
   </style>
@@ -310,12 +399,7 @@
 
 <header>
   <div class="header-wrap">
-    <h1>Le comparateur officiel d’offres d’électricité et de gaz naturel du médiateur national de l’énergie
-</h1>
-    <p>
-      Consultez plusieurs offres d’électricité et de gaz, visualisez les bonus de bienvenue,
-      comparez rapidement les fournisseurs et choisissez la solution la plus adaptée à votre consommation.
-    </p>
+    <h1>Le comparateur d’offres d’électricité et de gaz naturel du médiateur national de l’énergie</h1>
   </div>
 </header>
 
@@ -325,12 +409,11 @@
     <div class="intro-flex">
       <div class="intro-text">
         <h2>Comparer les fournisseurs d’énergie en un coup d’œil</h2>
-        <p>
-          <ul>
-            <li>Plusieurs fournisseurs d’électricité et de gaz avec des avantages différents</li>
-            <li>Changement de fournisseur <span class="accent-green">gratuit</span> et sans intervention technique</li>
-          </ul>
-        </p>
+
+        <ul class="intro-list">
+          <li>Plusieurs fournisseurs d’électricité et de gaz avec des avantages différents</li>
+          <li>Changement de fournisseur <span class="accent-green">gratuit</span> et sans intervention technique</li>
+        </ul>
 
         <div class="pill-row">
           <span class="pill">Comparatif électricité/gaz</span>
@@ -355,90 +438,92 @@
   <section class="card">
     <h2>Codes promotionnels énergie</h2>
 
-    <table id="providersTable">
-      <thead>
-        <tr>
-          <th>Fournisseur</th>
-          <th>Énergie</th>
-          <th>Code Promo</th>
-          <th>Avantage</th>
-        </tr>
-      </thead>
+    <div class="table-wrap">
+      <table id="providersTable">
+        <thead>
+          <tr>
+            <th>Fournisseur</th>
+            <th>Énergie</th>
+            <th>Code Promo</th>
+            <th>Avantage</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        <tr>
-          <td>
-            <span style="display:none;">comparateur energie total totalenergies offre electricite gaz bonus bienvenue</span>
-            <img src="Logo_TotalEnergies.svg" class="provider-logo logo-total" alt="TotalEnergies">
-          </td>
-          <td><span class="tag tag-mix">Électricité / Gaz</span></td>
-          <td>
-            <span class="code" id="c1">114201916</span>
-            <button onclick="copyCode('c1','total')">Copier</button>
-          </td>
-          <td><span class="bonus">20 € d’avantage</span></td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>
+              <span style="display:none;">comparateur energie total totalenergies offre electricite gaz bonus bienvenue</span>
+              <img src="Logo_TotalEnergies.svg" class="provider-logo logo-total" alt="TotalEnergies">
+            </td>
+            <td><span class="tag tag-mix">Électricité / Gaz</span></td>
+            <td>
+              <span class="code" id="c1">114201916</span>
+              <button onclick="copyCode('c1','total')">Copier</button>
+            </td>
+            <td><span class="bonus">20 € d’avantage</span></td>
+          </tr>
 
-        <tr>
-          <td>
-            <span style="display:none;">comparateur energie mint mint energie offre electricite gaz bonus</span>
-            <img src="Mint_energie.png" class="provider-logo" alt="Mint Énergie">
-          </td>
-          <td><span class="tag tag-mix">Électricité / Gaz</span></td>
-          <td>
-            <span class="code" id="c5">7796938</span>
-            <button onclick="copyCode('c5','mint')">Copier</button>
-          </td>
-          <td><span class="bonus">10 € d’avantage</span></td>
-        </tr>
+          <tr>
+            <td>
+              <span style="display:none;">comparateur energie mint mint energie offre electricite gaz bonus</span>
+              <img src="Mint_energie.png" class="provider-logo" alt="Mint Énergie">
+            </td>
+            <td><span class="tag tag-mix">Électricité / Gaz</span></td>
+            <td>
+              <span class="code" id="c5">7796938</span>
+              <button onclick="copyCode('c5','mint')">Copier</button>
+            </td>
+            <td><span class="bonus">10 € d’avantage</span></td>
+          </tr>
 
-        <tr>
-          <td>
-            <span style="display:none;">comparateur energie primeo primeo energie offre electricite gaz bonus</span>
-            <img src="primeo_energie.png" class="provider-logo logo-primeo" alt="Primeo Énergie">
-          </td>
-          <td><span class="tag tag-mix">Électricité / Gaz</span></td>
-          <td>
-            <span class="code" id="c4">CLT85638862</span>
-            <button onclick="copyCode('c4','primeo')">Copier</button>
-          </td>
-          <td><span class="bonus">15 € d’avantage</span></td>
-        </tr>
+          <tr>
+            <td>
+              <span style="display:none;">comparateur energie primeo primeo energie offre electricite gaz bonus</span>
+              <img src="primeo_energie.png" class="provider-logo logo-primeo" alt="Primeo Énergie">
+            </td>
+            <td><span class="tag tag-mix">Électricité / Gaz</span></td>
+            <td>
+              <span class="code" id="c4">CLT85638862</span>
+              <button onclick="copyCode('c4','primeo')">Copier</button>
+            </td>
+            <td><span class="bonus">15 € d’avantage</span></td>
+          </tr>
 
-        <tr>
-          <td>
-            <span style="display:none;">comparateur energie ekwateur offre electricite gaz bonus bienvenue</span>
-            <img src="Ekwateur.png" class="provider-logo logo-ekwateur" alt="Ekwateur">
-          </td>
-          <td><span class="tag tag-mix">Électricité / Gaz</span></td>
-          <td>
-            <span class="code" id="c3">EKW002441537</span>
-            <button onclick="copyCode('c3','ekwateur')">Copier</button>
-          </td>
-          <td><span class="bonus">150 kWh offerts</span></td>
-        </tr>
+          <tr>
+            <td>
+              <span style="display:none;">comparateur energie ekwateur offre electricite gaz bonus bienvenue</span>
+              <img src="Ekwateur.png" class="provider-logo logo-ekwateur" alt="Ekwateur">
+            </td>
+            <td><span class="tag tag-mix">Électricité / Gaz</span></td>
+            <td>
+              <span class="code" id="c3">EKW002441537</span>
+              <button onclick="copyCode('c3','ekwateur')">Copier</button>
+            </td>
+            <td><span class="bonus">150 kWh offerts</span></td>
+          </tr>
 
-        <tr>
-          <td>
-            <span style="display:none;">comparateur energie octopus energy offre bonus electricite gaz</span>
-            <img src="octopus.png" class="provider-logo" alt="Octopus Energy">
-          </td>
-          <td><span class="tag tag-mix">Électricité / Gaz</span></td>
-          <td>
-            <a
-              class="link-btn"
-              href="https://share.octopusenergy.fr/codeparrainage/smoke-window-954"
-              target="_blank"
-              rel="noopener noreferrer"
-              onclick="trackLink('octopus')"
-            >
-              Voir l’offre
-            </a>
-          </td>
-          <td><span class="bonus">40 € d’avantage</span></td>
-        </tr>
-      </tbody>
-    </table>
+          <tr>
+            <td>
+              <span style="display:none;">comparateur energie octopus energy offre bonus electricite gaz</span>
+              <img src="octopus.png" class="provider-logo" alt="Octopus Energy">
+            </td>
+            <td><span class="tag tag-mix">Électricité / Gaz</span></td>
+            <td>
+              <a
+                class="link-btn"
+                href="https://share.octopusenergy.fr/codeparrainage/smoke-window-954"
+                target="_blank"
+                rel="noopener noreferrer"
+                onclick="trackLink('octopus')"
+              >
+                Voir l’offre
+              </a>
+            </td>
+            <td><span class="bonus">40 € d’avantage</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <section class="card mini-grid">
