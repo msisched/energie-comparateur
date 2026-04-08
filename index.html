@@ -371,9 +371,8 @@
         <tr>
           <th>Fournisseur</th>
           <th>Énergie</th>
-          <th>Accès à l’offre</th>
+          <th>Code Promo</th>
           <th>Avantage</th>
-          <th>Action</th>
         </tr>
       </thead>
 
@@ -389,29 +388,9 @@
             <button onclick="copyCode('c1','total')">Copier</button>
           </td>
           <td><span class="bonus">20 € d’avantage</span></td>
-          <td><span class="muted">Code à utiliser</span></td>
         </tr>
 
-        <tr>
-          <td>
-            <span style="display:none;">comparateur energie octopus energy offre bonus electricite gaz</span>
-            <img src="octopus.png" class="provider-logo" alt="Octopus Energy">
-          </td>
-          <td><span class="tag tag-mix">Électricité / Gaz</span></td>
-          <td><span class="muted">Accès direct via lien</span></td>
-          <td><span class="bonus">40 € d’avantage</span></td>
-          <td>
-            <a
-              class="link-btn"
-              href="https://share.octopusenergy.fr/codeparrainage/smoke-window-954"
-              target="_blank"
-              rel="noopener noreferrer"
-              onclick="trackLink('octopus')"
-            >
-              Voir l’offre
-            </a>
-          </td>
-        </tr>
+
 
         <tr>
           <td>
@@ -424,17 +403,6 @@
             <button onclick="copyCode('c5','mint')">Copier</button>
           </td>
           <td><span class="bonus">10 € d’avantage</span></td>
-          <td>
-            <a
-              class="link-btn"
-              href="https://client.mint-energie.com?cp=7796938"
-              target="_blank"
-              rel="noopener noreferrer"
-              onclick="trackLink('mint')"
-            >
-              Voir l’offre
-            </a>
-          </td>
         </tr>
 
         <tr>
@@ -448,7 +416,6 @@
             <button onclick="copyCode('c4','primeo')">Copier</button>
           </td>
           <td><span class="bonus">15 € d’avantage</span></td>
-          <td><span class="muted">Code à utiliser</span></td>
         </tr>
 
         <tr>
@@ -462,17 +429,27 @@
             <button onclick="copyCode('c3','ekwateur')">Copier</button>
           </td>
           <td><span class="bonus">150 kWh offerts</span></td>
+        </tr>
+
+        <tr>
+          <td>
+            <span style="display:none;">comparateur energie octopus energy offre bonus electricite gaz</span>
+            <img src="octopus.png" class="provider-logo" alt="Octopus Energy">
+          </td>
+          <td><span class="tag tag-mix">Électricité / Gaz</span></td>
           <td>
             <a
               class="link-btn"
-              href="https://souscription.ekwateur.fr/?codePromo=EKW002441537"
+              href="https://share.octopusenergy.fr/codeparrainage/smoke-window-954"
               target="_blank"
               rel="noopener noreferrer"
-              onclick="trackLink('ekwateur')"
+              onclick="trackLink('octopus')"
             >
               Voir l’offre
             </a>
           </td>
+          <td><span class="bonus">40 € d’avantage</span></td>
+
         </tr>
       </tbody>
     </table>
